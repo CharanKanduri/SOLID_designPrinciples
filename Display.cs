@@ -20,13 +20,13 @@ namespace SOLID_design_principles
                 Console.WriteLine("\n*****Internal marks ****");
                 Console.WriteLine("\n{0}",i.internalMarks);
                 if (i.internalMarks > 50)
-                {
-                    GreaterThan50 greaterThan50 = new GreaterThan50();
+                {   //Replace with abstract class LSP
+                    AverageCalculation greaterThan50 = new GreaterThan50();
                     int percentage = greaterThan50.Calculatepercentage(i);
                     Console.WriteLine("total average is: " + percentage);
                 }
                 else {
-                    LesserThan50 lesserThan50 = new LesserThan50();
+                    AverageCalculation lesserThan50 = new LesserThan50();
                     int percentage = lesserThan50.Calculatepercentage(i);
                     Console.WriteLine("total average is: " + percentage);
                 }
