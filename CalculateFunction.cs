@@ -6,15 +6,21 @@ using System.Threading.Tasks;
 
 namespace SOLID_design_principles
 {
-    class CalculateFunction
+    public class LesserThan50 : AverageCalculation
     {
-        public static int Calculatepercentage(int m, int p, int c)
+        public override int Calculatepercentage(SingleResponsibility marksInfo)
         {
-            int result = (m + p + c) / 3;
-            return result;
-
+            int result = (marksInfo.maths + marksInfo.physics + marksInfo.chemistry) / 3;
+            return result+marksInfo.internalMarks;
         }
-
-
+    }
+    class GreaterThan50 : AverageCalculation
+    {
+        public override int Calculatepercentage(SingleResponsibility marksInfo)
+        {
+            int result = (marksInfo.maths + marksInfo.physics + marksInfo.chemistry) / 3;
+            int bonus = 10;
+            return result +marksInfo.internalMarks +bonus ;
+        }
     }
 }
